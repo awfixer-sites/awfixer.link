@@ -3,10 +3,6 @@
   "private": true,
   "author": "ian <licitdev@gmail.com>",
   "license": "MIT",
-  "workspaces": [
-    "./app",
-    "./worker"
-  ],
   "devDependencies": {
     "lerna": "^5.1.6",
     "patch-package": "^6.4.7",
