@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "lerna": "^8.2.2",
-    "patch-package": "^6.4.7",
+    "patch-package": "^8.0.1",
     "postinstall-postinstall": "^2.1.0"
   },
   "scripts": {
