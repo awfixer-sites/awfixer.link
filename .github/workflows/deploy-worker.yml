@@ -28,7 +28,7 @@ jobs:
         run: |
           echo "::add-mask::${{ secrets.MASK_WORKER_URL }}"
       - name: Publish to Cloudflare Workers
-        uses: cloudflare/wrangler-action@2.0.0
+        uses: cloudflare/wrangler-action@v3.14.1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: "worker"
