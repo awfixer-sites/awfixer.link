@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { Session } from '@supabase/gotrue-js/dist/main/lib/types';
+import type { Session } from '@supabase/supabase-js';
 import { ref } from 'vue';
 
 export const useAppStore = defineStore('appStore', {

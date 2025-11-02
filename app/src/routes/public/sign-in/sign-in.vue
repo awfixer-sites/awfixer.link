@@ -3,7 +3,7 @@
 		<div id="content">
 			<n-form ref="formRef" :model="model" :rules="rules">
 				<img class="logo" src="/supaflare.png" />
-				<h1>Sign In</h1>
+				<h1>Sign In to AWFixer Link</h1>
 				<n-form-item path="email" label="Email">
 					<n-input v-model:value="model.email" placeholder="Enter Email" @keydown.enter="handleValidateButtonClick" />
 				</n-form-item>

@@ -1,14 +1,33 @@
 {
-  "name": "supaflare-monorepo",
+  "name": "@awfixer.link/monorepo",
   "private": true,
-  "author": "ian <licitdev@gmail.com>",
+  "author": "AWFixer and Friends",
   "license": "MIT",
-  "devDependencies": {
-    "lerna": "^8.2.2",
-    "patch-package": "^8.0.1",
-    "postinstall-postinstall": "^2.1.0"
+  "dependencies": {
+    "vercel": "^48.8.0",
+    "wrangler": "^4.45.3"
   },
-  "scripts": {
-    "postinstall": "patch-package"
+  "devDependencies": {
+    "turbo": "^2.6.0"
+  },
+  "scripts": {},
+  "engines": {
+    "node": "^22",
+    "pnpm": "^10"
+  },
+  "packageManager": "pnpm@10.15.1",
+  "workspaces": {
+    "packages": [
+      ".",
+      "app",
+      "worker"
+    ]
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "workerd"
+    ]
   }
 }

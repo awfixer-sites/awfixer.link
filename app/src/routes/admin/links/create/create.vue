@@ -218,8 +218,9 @@ export default defineComponent({
 					},
 				});
 				if (error) throw error;
-
-				linksStore.addLink(data);
+				if (data) {
+					linksStore.addLink(data);
+				}
 				resetForm();
 				message.success('Link successfully created!', { duration: messageDuration });
 			} catch (error: any) {

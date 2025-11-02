@@ -3,7 +3,7 @@ import { Link } from '@/types/global';
 import axios, { Axios } from 'axios';
 import { useAppStore } from '@/stores/appStore';
 
-const supaflareWorkerUpdateURL = import.meta.env.VITE_SUPAFLARE_WORKER_URL + '/supaflare_cfw_update';
+const supaflareWorkerUpdateURL = '/api/supaflare_cfw_update';
 const appStore = useAppStore();
 
 const options = {
@@ -19,11 +19,13 @@ async function fetchLinks() {
 
 async function addLink(link: Link) {
 	const { data, error } = await supabase.from('links').insert(link).single();
-	await axios.post(
-		supaflareWorkerUpdateURL,
-		{ token: appStore.supabaseSession!.access_token, link_id: data.id },
-		options
-	);
+	if (data && appStore.supabaseSession?.access_token) {
+		await axios.post(
+			supaflareWorkerUpdateURL,
+			{ token: appStore.supabaseSession.access_token, link_id: (data as any).id },
+			options
+		);
+	}
 	return { data, error };
 }
 
