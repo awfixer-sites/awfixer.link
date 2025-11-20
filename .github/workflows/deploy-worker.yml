@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy Worker
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
       - name: Set Up Node.js
         uses: actions/setup-node@v1
         with:
